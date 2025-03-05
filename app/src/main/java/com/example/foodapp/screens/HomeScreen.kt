@@ -12,6 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -23,8 +26,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.foodapp.components.categoriasCards
+import com.example.foodapp.components.comidasCards
 import com.example.foodapp.components.restaurantesCards
+import com.example.foodapp.models.Restaurantes
 import com.example.foodapp.models.categoriasLista
+import com.example.foodapp.models.comidasLista
 import com.example.foodapp.models.restaurantesLista
 import com.example.foodapp.ui.theme.myColor
 import com.example.foodapp.utils.Account_circle
@@ -32,7 +38,6 @@ import com.example.foodapp.utils.Logout
 
 @Composable
 fun HomeScreen(innerPadding: PaddingValues){
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -86,5 +91,17 @@ fun HomeScreen(innerPadding: PaddingValues){
                 restaurantesCards(restaurantes = res )
             }
         }
+
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(text= "Nuestras mejores comidas", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2)
+        ) {
+            items(comidasLista){ com ->
+                comidasCards(comidas = com)
+            }
+        }
+
     }
 }
