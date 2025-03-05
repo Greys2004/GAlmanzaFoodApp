@@ -23,7 +23,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.foodapp.components.categoriasCards
+import com.example.foodapp.components.restaurantesCards
 import com.example.foodapp.models.categoriasLista
+import com.example.foodapp.models.restaurantesLista
 import com.example.foodapp.ui.theme.myColor
 import com.example.foodapp.utils.Account_circle
 import com.example.foodapp.utils.Logout
@@ -59,7 +61,7 @@ fun HomeScreen(innerPadding: PaddingValues){
             )
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(30.dp))
         Text(text= "Nuestras Categorias", fontSize = 20.sp, fontWeight = FontWeight.Bold)
 
         LazyRow(
@@ -69,6 +71,19 @@ fun HomeScreen(innerPadding: PaddingValues){
         ) {
             items(categoriasLista){cat ->
                 categoriasCards(categorias = cat )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(text= "Busca los mejores restaurantes", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+
+        LazyRow(
+            modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+
+        ) {
+            items(restaurantesLista){ res ->
+                restaurantesCards(restaurantes = res )
             }
         }
     }
