@@ -29,7 +29,7 @@ import com.example.foodapp.ui.theme.myColor
 fun categoriasCards(categorias: Categorias){
 
     Column(
-        modifier = Modifier.padding(20.dp)
+        modifier = Modifier.padding(8.dp)
     ){
         Box(
             modifier = Modifier

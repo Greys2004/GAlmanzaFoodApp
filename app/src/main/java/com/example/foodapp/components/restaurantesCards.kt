@@ -29,7 +29,7 @@ import com.example.foodapp.ui.theme.myColor
 fun restaurantesCards(restaurantes: Restaurantes){
 
     Column(
-        modifier = Modifier.padding(20.dp)
+        modifier = Modifier.padding(8.dp)
     ){
         GlideImage(
             model = restaurantes.imagen,

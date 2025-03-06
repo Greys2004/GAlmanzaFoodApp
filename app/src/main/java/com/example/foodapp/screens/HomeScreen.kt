@@ -71,8 +71,7 @@ fun HomeScreen(innerPadding: PaddingValues){
 
         LazyRow(
             modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-
+            horizontalArrangement = Arrangement.Start
         ) {
             items(categoriasLista){cat ->
                 categoriasCards(categorias = cat )
@@ -84,7 +83,7 @@ fun HomeScreen(innerPadding: PaddingValues){
 
         LazyRow(
             modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+            horizontalArrangement = Arrangement.spacedBy(3.dp)
 
         ) {
             items(restaurantesLista){ res ->

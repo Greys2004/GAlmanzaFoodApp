@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -35,7 +36,8 @@ import com.example.foodapp.utils.Star
 fun comidasCards(comidas: Comidas){
 
     Column(
-        modifier = Modifier.padding(20.dp)
+        modifier = Modifier.padding(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ){
         Box(
             modifier = Modifier
@@ -69,16 +71,19 @@ fun comidasCards(comidas: Comidas){
         Spacer(modifier = Modifier.height(8.dp))
 
         Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+
         ){
             Icon(
                 imageVector = Star,
                 contentDescription = "Icono de sesion",
-                modifier = Modifier.padding(start = 8.dp).size(30.dp),
+                modifier = Modifier.size(25.dp),
                 tint = Color.Green
             )
-            Text( text = comidas.calificacion.toString())
-            Text( text = comidas.nombre)
+            Spacer(modifier = Modifier.width(2.dp))
+            Text( text = comidas.calificacion.toString(), fontSize = 14.sp )
+            Spacer(modifier = Modifier.width(2.dp))
+            Text( text = comidas.nombre, fontSize = 14.sp)
         }
     }
 }
